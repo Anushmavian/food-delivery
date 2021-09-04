@@ -1,0 +1,40 @@
+{
+	"info": {
+		"_postman_id": "e4d8d411-591a-487a-8d1b-500724231ab6",
+		"name": "food_delivery",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "New Request",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"orderNumber\": 12,\r\n\"itemName\": \"pizza\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/place_order",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"place_order"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

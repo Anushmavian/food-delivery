@@ -1,0 +1,16 @@
+version: "3.8"
+services:
+  rabbitmq_local:
+    image: rabbitmq:3-management
+    container_name: 'food-delivery-rabbitmq'
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+  backend:
+    build: ../food-delivery
+    container_name: 'food-delivery-backend'
+    ports:
+      - "5000:5000"
+    depends_on:
+      - "rabbitmq_local"
+    command: sh -c "dockerize -wait tcp://rabbitmq_local:5672 -timeout 60s -wait-retry-interval 10s /opt/main/run_project.sh"
